@@ -133,7 +133,7 @@ let
       install -v build/lib/pkgconfig/*.pc        $out/lib/pkgconfig/
       install -v dpdk/build/lib/*.a              $out/lib/
       install -v dpdk/build/lib/pkgconfig/*.pc   $out/lib/pkgconfig/
-      install -v intel-ipsec-mb/lib/*.a          $out/lib/
+      #install -v intel-ipsec-mb/lib/*.a          $out/lib/
 
       # fix paths in pkg config files
       build_dir=`pwd`
@@ -142,7 +142,7 @@ let
         echo "fixing pkg config paths in '$i' ..."
         sed -i "s,$build_dir/build/lib,$out/lib,g" $i
         sed -i "s,$build_dir/dpdk/build,$out,g" $i
-        sed -i "s,$build_dir/intel-ipsec-mb/lib,$out/lib,g" $i
+        #sed -i "s,$build_dir/intel-ipsec-mb/lib,$out/lib,g" $i
       done
     '';
   };
